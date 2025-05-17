@@ -1,0 +1,29 @@
+<!-- filepath: c:\Users\Shwetha\OneDrive\Desktop\my full stack pro\templates\dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<table class="table table-striped">
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post['id'] }}</td>
+            <td>{{ post['title'] }}</td>
+            <td>{{ post['content'] }}</td>
+            <td>{{ post['created'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
